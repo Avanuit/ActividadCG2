@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>actividad en clase</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap">
+</head>
+<body>
+    <canvas id="Canvas"></canvas>
+    <div class="vignette"></div>
+
+    <div id="cursor">
+        <div class="precision-dot"></div>
+    </div>
+
+    <main class="glass-card">
+        <header>
+          <h1>RGB SLIDER</h1>
+        </header>
+
+        <div class="visualizer">
+            <div id="hex-code">#000000</div>
+            <div class="rgb-labels">
+                <span id="rgb-display">rgb(0, 0, 0)</span>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="field">
+                <div class="info"><span>Red</span><span id="valR">0</span></div>
+                <input type="range" id="r" min="0" max="255" value="0" class="slider-r">
+            </div>
+
+            <div class="field">
+                <div class="info"><span>Green</span><span id="valG">0</span></div>
+                <input type="range" id="g" min="0" max="255" value="0" class="slider-g">
+            </div>
+
+            <div class="field">
+                <div class="info"><span>Blue</span><span id="valB">0</span></div>
+                <input type="range" id="b" min="0" max="255" value="0" class="slider-b">
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
