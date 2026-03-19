@@ -56,16 +56,31 @@ function render() {
     requestAnimationFrame(render);
 }
 
-function updateValues() {
-    color.r = document.getElementById('r').value;
-    color.g = document.getElementById('g').value;
-    color.b = document.getElementById('b').value;
-    color.a = document.getElementById('a').value;
-
-    document.getElementById('valR').innerText = color.r;
-    document.getElementById('valG').innerText = color.g;
-    document.getElementById('valB').innerText = color.b;
-    document.getElementById('valA').innerText = color.a;
+function updateValues(e) {
+    if (e) {
+        if (e.target.id === 'r') {
+            color.r = e.target.value;
+            document.getElementById('valR').innerText = color.r;
+        } else if (e.target.id === 'g') {
+            color.g = e.target.value;
+            document.getElementById('valG').innerText = color.g;
+        } else if (e.target.id === 'b') {
+            color.b = e.target.value;
+            document.getElementById('valB').innerText = color.b;
+        } else if (e.target.id === 'a') {
+            color.a = e.target.value;
+            document.getElementById('valA').innerText = color.a;
+        }
+    } else {
+        color.r = document.getElementById('r').value;
+        color.g = document.getElementById('g').value;
+        color.b = document.getElementById('b').value;
+        color.a = document.getElementById('a').value;
+        document.getElementById('valR').innerText = color.r;
+        document.getElementById('valG').innerText = color.g;
+        document.getElementById('valB').innerText = color.b;
+        document.getElementById('valA').innerText = color.a;
+    }
     
     const toHex = (c) => parseInt(c).toString(16).padStart(2, '0');
     const aHex = toHex(Math.round(color.a * 255));

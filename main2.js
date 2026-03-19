@@ -1,14 +1,29 @@
 const colorBox = document.getElementById('color-box');
 const sliders = document.querySelectorAll('input[type="range"]');
+let r = 0, g = 0, b = 0;
 
-function updateColor() {
-    const r = document.getElementById('r').value;
-    const g = document.getElementById('g').value;
-    const b = document.getElementById('b').value;
-
-    document.getElementById('valR').innerText = r;
-    document.getElementById('valG').innerText = g;
-    document.getElementById('valB').innerText = b;
+function updateColor(e) {
+    if (e) {
+        if (e.target.id === 'r') {
+            r = e.target.value;
+            document.getElementById('valR').innerText = r;
+        }
+        if (e.target.id === 'g') {
+            g = e.target.value;
+            document.getElementById('valG').innerText = g;
+        }
+        if (e.target.id === 'b') {
+            b = e.target.value;
+            document.getElementById('valB').innerText = b;
+        }
+    } else {
+        r = document.getElementById('r').value;
+        g = document.getElementById('g').value;
+        b = document.getElementById('b').value;
+        document.getElementById('valR').innerText = r;
+        document.getElementById('valG').innerText = g;
+        document.getElementById('valB').innerText = b;
+    }
 
     const rgbString = `rgb(${r}, ${g}, ${b})`;
     colorBox.style.backgroundColor = rgbString;
