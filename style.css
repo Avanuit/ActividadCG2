@@ -85,9 +85,15 @@ input[type="range"]::-webkit-slider-thumb {
     background: #fff;
     border-radius: 50%;
     cursor: pointer;
+    transition: border-radius 0.3s ease, transform 0.2s ease;
 }
 
-/* Gradientes sutiles para los tracks */
+input[type="range"]:active::-webkit-slider-thumb {
+    border-radius: 0;
+    transform: scale(1.2);
+}
+
 .slider-r::-webkit-slider-runnable-track { background: linear-gradient(90deg, #200, #f22); }
 .slider-g::-webkit-slider-runnable-track { background: linear-gradient(90deg, #020, #2f2); }
 .slider-b::-webkit-slider-runnable-track { background: linear-gradient(90deg, #002, #22f); }
+.slider-a::-webkit-slider-runnable-track { background: linear-gradient(90deg, transparent, #fff); }
